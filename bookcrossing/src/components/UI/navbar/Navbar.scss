@@ -1,0 +1,19 @@
+@import "/src/styles/variables.scss";
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    border-right: 1px solid $grey;
+    
+    &-item {
+        &:hover {
+            filter: invert(54%) sepia(71%) saturate(1885%) hue-rotate(291deg) brightness(96%) contrast(92%);
+        }
+    }
+
+}
+

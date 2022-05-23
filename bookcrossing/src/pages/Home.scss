@@ -1,0 +1,74 @@
+@import "/src/styles/variables.scss";
+
+.nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100px;
+}
+
+.main {
+    margin-left: 188px;
+
+    &-header {
+        color: #fff;
+    }
+}
+
+.row1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 241px;
+    margin-top: 85px;
+}
+
+.item {
+    height: 100%;
+
+    &-faq {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 329px;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        background: linear-gradient(120.5deg, rgba(236, 94, 183, 0.2) 40.38%, rgba(183, 131, 235, 0.2) 91.88%), #3C354A;
+        border-radius: 20px;
+
+        &-title {
+            font-weight: 400;
+            font-size: 56px;
+            line-height: 68px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #FFFFFF;
+        }
+
+        &-subtitle {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 18px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #FFFFFF;
+        }
+    }
+
+    &-info {
+        background-color: $dark-grey;
+        width: 658px;
+        height: 100%;
+
+        border-radius: 20px;
+    }
+}
