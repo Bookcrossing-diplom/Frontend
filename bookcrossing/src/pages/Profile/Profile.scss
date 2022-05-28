@@ -1,0 +1,37 @@
+@import "/src/styles/variables.scss";
+
+.profile {
+    margin: 2rem 3rem 2rem 180px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    &-pic {
+        width: 254px;
+        height: 254px;
+        background-color: $dark-grey;
+        border-radius: 20px;
+    }
+
+    &-descr {
+        width: 629px;
+        height: 258px;
+        background-color: $dark-grey;
+        border-radius: 20px;
+        color: #fff;
+
+        &-name {
+            margin-left: 20px;
+        }
+        &-city {
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        &-genre {
+            margin-left: 20px;
+            margin-top: 35px;
+        }
+    }
+
+}
