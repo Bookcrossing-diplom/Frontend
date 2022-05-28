@@ -1,15 +1,8 @@
 @import "/src/styles/variables.scss";
 
-.nav {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100px;
-}
-
 .main {
-    margin-left: 188px;
+    display: block;
+    margin: 1rem 3rem 1rem 180px;
 
     &-header {
         color: #fff;
@@ -22,6 +15,36 @@
     justify-content: space-between;
     height: 241px;
     margin-top: 85px;
+}
+
+.row2 {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(265.53deg, #603e60 6.49%, #574368 88.75%);
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 3rem;
+
+    &-title {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 34px;
+        color: #fff;
+    }
+
+    &-item {
+        width: 241px;
+        height: 241px;
+        background: rgba(170, 161, 226, 0.66);
+        border-radius: 20px;
+    }
 }
 
 .item {
@@ -37,7 +60,12 @@
         justify-content: center;
         cursor: pointer;
 
-        background: linear-gradient(120.5deg, rgba(236, 94, 183, 0.2) 40.38%, rgba(183, 131, 235, 0.2) 91.88%), #3C354A;
+        background: linear-gradient(
+                120.5deg,
+                rgba(236, 94, 183, 0.2) 40.38%,
+                rgba(183, 131, 235, 0.2) 91.88%
+            ),
+            #3c354a;
         border-radius: 20px;
 
         &-title {
@@ -48,7 +76,7 @@
             align-items: center;
             text-align: center;
 
-            color: #FFFFFF;
+            color: #ffffff;
         }
 
         &-subtitle {
@@ -60,7 +88,7 @@
             align-items: center;
             text-align: center;
 
-            color: #FFFFFF;
+            color: #ffffff;
         }
     }
 

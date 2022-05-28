@@ -1,0 +1,49 @@
+@import "/src/styles/variables.scss";
+
+.header {
+    position: relative;
+    width: 80%;
+    margin-left: 180px;
+    margin-right: 2rem;
+
+    &-title {
+        color: #fff;
+        margin-top: 2px;
+        padding: 10px;
+    }
+
+    &-search {
+        position: absolute;
+        right: 200px;
+        top: 0;
+        width: 260px;
+        height: 47px;
+        background: #2f293e;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+
+        input {
+            outline: none;
+            border: none;
+            background-color: transparent;
+            color: #fff;
+            padding-left: 5px;
+        }
+    }
+
+    &-profile {
+        position: absolute;
+        right: 20px;
+        top: 0;
+
+        width: 47px;
+        height: 47px;
+
+        background: #2f293e;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
