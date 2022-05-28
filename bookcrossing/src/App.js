@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
+import Messages from "./pages/Messages/Messages";
 import MyBooks from "./pages/MyBooks/MyBooks";
 import Profile from "./pages/Profile/Profile";
 
@@ -13,6 +14,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/mybooks" element={<MyBooks />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/messages" element={<Messages />} />
             </Routes>
         </BrowserRouter>
   );

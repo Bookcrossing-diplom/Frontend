@@ -17,7 +17,7 @@ const Navbar = () => {
             <img src={Logo} alt="main" className="navbar-item"  onClick={() => navigate("/")}/>
             <img src={Book} alt="book" className="navbar-item" onClick={() => navigate("/mybooks")}/>
             <img src={Person} alt="person" className="navbar-item" onClick={() => navigate("/profile")}/>
-            <img src={Message} alt="messages" className="navbar-item" />
+            <img src={Message} alt="messages" className="navbar-item" onClick={() => navigate("/messages")}/>
             <img src={Quit} alt="quit" className="navbar-item" />
         </div>
     );
