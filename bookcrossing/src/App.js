@@ -6,6 +6,7 @@ import Messages from "./pages/Messages/Messages";
 import MyBooks from "./pages/MyBooks/MyBooks";
 import Profile from "./pages/Profile/Profile";
 import Search from "./pages/Search/Search";
+import Book from "./pages/Book/Book";
 
 import "./styles/App.scss"
 
@@ -17,8 +18,9 @@ function App() {
                 <Route path="/mybooks" element={<MyBooks />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/messages" element={<Messages />} />
-                <Route path="/favorites" element={<Add />} />
+                <Route path="/desired" element={<Add />} />
                 <Route path="/search" element={<Search />} />
+                <Route path="/book" element={ <Book /> } />
             </Routes>
         </BrowserRouter>
   );
