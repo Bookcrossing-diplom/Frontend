@@ -1,0 +1,19 @@
+.search {
+    margin-left: 200px;
+
+    &-input {
+        display: block;
+        margin-left: 600px;
+        margin-top: 4rem;
+        width: 450px;
+        height: 55px;
+        background: #2f293e;
+        border-radius: 15px;
+        align-items: center;
+        outline: none;
+        border: none;
+        color: #fff;
+        padding-left: 10px;
+        font-size: 30px;
+    }
+}
