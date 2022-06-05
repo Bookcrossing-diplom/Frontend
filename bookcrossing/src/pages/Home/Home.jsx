@@ -33,7 +33,6 @@ const Home = ({ children, ...props }) => {
                             Нажмите для справки
                         </span>
                     </div>
-                    <div className="item-info"></div>
                 </div>
                 <div className="row2">
                     <span className="row2-title">
