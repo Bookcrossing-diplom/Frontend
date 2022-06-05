@@ -75,6 +75,7 @@ const Add = () => {
             .then(function (response) {
                 console.log(response.data);
                 setBookData(response.data);
+                setAddPopup(false)
             })
             .catch(function (error) {
                 console.log(error);
