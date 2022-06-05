@@ -27,7 +27,8 @@ const Profile = () => {
         <div>
             <Navbar />
             <Header title="Профиль" />
-            <div className="profile">
+            { profileData ? (
+                <div className="profile">
                 <div className="profile-pic">
                     <img src={UserPic} alt="profile" className="profile-pic"/>
                 </div>
@@ -39,6 +40,9 @@ const Profile = () => {
                     })}</p>
                 </div>
             </div>
+            ) : (
+                <h2 className="profile-loading">Загрузка....</h2>
+            ) }
         </div>
     );
 };
