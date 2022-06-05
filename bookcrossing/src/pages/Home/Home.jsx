@@ -4,10 +4,13 @@ import Header from "../../components/UI/Header/Header";
 import Navbar from "../../components/UI/navbar/Navbar";
 
 import "./Home.scss";
+import "../Search/Search.scss";
+import BookElement from "../../components/BLL/BookElements/BookElement";
 
 const Home = ({ children, ...props }) => {
 
     const [newsData, setNewsData] = useState();
+    const [bookData, setBookData] = useState();
 
     async function getNews() {
         let url = "http://localhost:8080/news"
@@ -16,9 +19,17 @@ const Home = ({ children, ...props }) => {
         setNewsData(response.data);
     }
 
+    async function getBooks() {
+        let url = `http://localhost:8080/book/`;
+        let response = await axios.get(url);
+        console.log(response.data.slice(-3));
+        setBookData(response.data.slice(-3));
+    }
+
 
     useEffect( () => {
         getNews();
+        getBooks();
     }, [] )
 
     return (
@@ -38,10 +49,14 @@ const Home = ({ children, ...props }) => {
                     <span className="row2-title">
                         Последние добавленные книги
                     </span>
-                    <div className="row2-item"></div>
-                    <div className="row2-item"></div>
-                    <div className="row2-item"></div>
-                    <div className="row2-item"></div>
+                    <div className="search-wrap">
+                        {bookData ? 
+                        <>
+                           {bookData.map(item => {
+                               return <BookElement data={item} key={item.id}/>
+                           })} 
+                        </> : <>Загрузка...</>}
+                    </div>
                 </div>
                 <div className="main-news">
                     { newsData ? (
