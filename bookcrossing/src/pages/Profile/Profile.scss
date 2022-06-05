@@ -14,12 +14,23 @@
         border-radius: 20px;
     }
 
+    &-edit {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 30px;
+        height: auto;
+        cursor: pointer;
+
+    }
+
     &-descr {
         width: 629px;
         height: 258px;
         background-color: $dark-grey;
         border-radius: 20px;
         color: #fff;
+        position: relative;
 
         &-name {
             margin-left: 20px;

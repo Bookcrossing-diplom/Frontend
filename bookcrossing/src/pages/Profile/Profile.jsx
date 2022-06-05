@@ -6,6 +6,7 @@ import UserId from "../../context/userId";
 
 import "./Profile.scss";
 import UserPic from "../../assets/default-user.png";
+import Pen from "../../assets/pen.png";
 
 const Profile = () => {
     const { userId, setUserId } = useContext(UserId);
@@ -38,7 +39,9 @@ const Profile = () => {
                     <p className="profile-descr-genre">{profileData.categories.map(item => {
                       return `${item.name}, `
                     })}</p>
+                    <img src={Pen} alt="edit" className="profile-edit" />
                 </div>
+                
             </div>
             ) : (
                 <h2 className="profile-loading">Загрузка....</h2>
