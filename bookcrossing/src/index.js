@@ -5,6 +5,7 @@ import App from "./App";
 import LoginStatus from "./context/loginStatus";
 import UserId from "./context/userId";
 import BookContext from "./context/bookId";
+import GuestContext from "./context/guestContext";
 
 import "./styles/index.scss";
 
@@ -12,6 +13,7 @@ function Main() {
     const [userId, setUserId] = useState(null);
     const [loginStatus, setLoginStatus] = useState(false);
     const [bookId, setBookId] = useState(null);
+    const [guestID, setGuestId] = useState(null);
     
 
     return (
@@ -19,7 +21,9 @@ function Main() {
             <LoginStatus.Provider value={{ loginStatus, setLoginStatus }}>
                 <UserId.Provider value={{ userId, setUserId }}>
                     <BookContext.Provider value={{ bookId, setBookId }}>
-                        <App />
+                        <GuestContext.Provider value={{ guestID, setGuestId}}>
+                            <App />
+                        </GuestContext.Provider>
                     </BookContext.Provider>
                 </UserId.Provider>
             </LoginStatus.Provider>

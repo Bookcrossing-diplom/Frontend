@@ -9,6 +9,7 @@ import Search from "./pages/Search/Search";
 import Book from "./pages/Book/Book";
 
 import "./styles/App.scss"
+import GuestUser from "./pages/GuestUser/GuestUser";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/desired" element={<Add />} />
                 <Route path="/search" element={<Search />} />
                 <Route path="/book" element={ <Book /> } />
+                <Route path="/guest" element={ <GuestUser /> } />
             </Routes>
         </BrowserRouter>
   );

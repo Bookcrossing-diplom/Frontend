@@ -1,0 +1,44 @@
+@import "/src/styles/variables.scss";
+
+.guestWrap {
+    margin-left: 180px;
+}
+
+.guestBtn {
+    margin-left: 50%;
+    width: 250px;
+    height: 55px;
+    background: #2f293e;
+    border-radius: 15px;
+    align-items: center;
+    outline: none;
+    border: none;
+    color: #fff;
+    padding-left: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+
+    &:hover {
+        background-color: $pink;
+    }
+}
+
+.bookG-item {
+    width: 300px;
+    height: 250px;
+    text-align: center;
+    background-color: $dark-grey;
+    border-radius: 20px;
+
+    &-type {
+        color: $pink;
+        font-size: 26px;
+    }
+    &-name {
+        font-size: 25px;
+    }
+    &-author {
+        font-size: 23px;
+    }
+}

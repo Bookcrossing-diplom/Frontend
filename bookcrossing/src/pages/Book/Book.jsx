@@ -3,11 +3,16 @@ import React, { useState, useContext, useEffect } from "react";
 import Header from "../../components/UI/Header/Header";
 import Navbar from "../../components/UI/navbar/Navbar";
 import BookContext from "../../context/bookId";
+import { useNavigate } from "react-router-dom";
 
 import "./Book.scss";
+import GuestContext from "../../context/guestContext";
 
 const Book = () => {
+    const navigate = useNavigate();
+
     const { bookId, setBookId } = useContext(BookContext);
+    const { guestID, setGuestId } = useContext(GuestContext);
 
     const [bookData, setBookData] = useState();
     const [ratingValue, setRatingValue] = useState();
@@ -79,7 +84,10 @@ const Book = () => {
                         />
                         {bookData.usersBooks.map((item) => {
                             return (
-                                <p className="book-user" key={item.id}>
+                                <p className="book-user" key={item.id} onClick={() => {
+                                    setGuestId(item.usersModel.id);
+                                    navigate("/guest");
+                                }}>
                                     {item.type === "Желаемые"
                                         ? "Желает: "
                                         : "Имеет: "}{" "}
