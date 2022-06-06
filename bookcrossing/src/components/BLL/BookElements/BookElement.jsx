@@ -1,11 +1,18 @@
 import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import BookContext from "../../../context/bookId";
 
 const BookElement = ({ data }) => {
+    const navigate = useNavigate();
     const { bookId, setBookId } = useContext(BookContext);
 
+    function navHandler() {
+        setBookId(data.id);
+        navigate("/book")
+    }
+
     return (
-        <div className="search-item">
+        <div className="search-item" onClick={navHandler}>
             <span className="search-item-name">{data.name}</span>
             {data.authors.map(item => {
                 return <span className="search-item-authors" key={item.id}>{item.firstname} {item.lastname}</span>
