@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Header from "../../components/UI/Header/Header";
 import Navbar from "../../components/UI/navbar/Navbar";
+import UserId from "../../context/userId";
+
 
 import "./Messages.scss";
 import Photo from "../../assets/photos/photo.png";
@@ -8,10 +10,19 @@ import Photo from "../../assets/photos/photo.png";
 const Messages = () => {
     const [messageData, setMessageData] = useState(["Привет!", "Хмм..."]);
     const [messageInput, setMessageInput] = useState("");
+    const { userId, setUserId } = useContext(UserId);
 
     function handleMessage() {
         setMessageData([...messageData, messageInput]);
     }
+
+
+    // async function postComment() {
+    //     let url = `http://localhost:8080/user/${guestId}`;
+    //     axios.post(url, {
+    //         message: messageData
+    //     })
+    // }
 
     return (
         <div>

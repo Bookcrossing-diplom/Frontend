@@ -3,6 +3,7 @@ import React, { useState, useContext, useEffect } from "react";
 import Header from "../../components/UI/Header/Header";
 import Navbar from "../../components/UI/navbar/Navbar";
 import BookContext from "../../context/bookId";
+import UserId from "../../context/userId";
 import { useNavigate } from "react-router-dom";
 
 import "./Book.scss";
@@ -13,6 +14,7 @@ const Book = () => {
 
     const { bookId, setBookId } = useContext(BookContext);
     const { guestID, setGuestId } = useContext(GuestContext);
+    const { userId, setUserId } = useContext(UserId);
 
     const [bookData, setBookData] = useState();
     const [ratingValue, setRatingValue] = useState();
@@ -29,6 +31,32 @@ const Book = () => {
     useEffect(() => {
         getBook();
     }, []);
+
+    useEffect( () => {
+        if (ratingValue <= 1) {
+            setRatingValue(1);
+        } else if (ratingValue >= 5) {
+            setRatingValue(5);
+        } 
+    }, [ratingValue] );
+
+    async function postRating() {
+        let url = `http://localhost:8080/book/${bookId}/addRating`;
+        axios.post(url, {
+            userId: userId,
+            grade: ratingValue
+        })
+        setRatingValue("")
+
+    }
+
+    async function postComment() {
+        let url = `http://localhost:8080/book/${bookId}/addComment`;
+        axios.post(url, {
+            userId: userId,
+            comment: commentData
+        })
+    }
 
     return (
         <>
@@ -82,6 +110,7 @@ const Book = () => {
                             value={ratingValue}
                             onChange={(e) => setRatingValue(e.target.value)}
                         />
+                        <button className="book-btnR" onClick={postRating} >Отправить</button>
                         {bookData.usersBooks.map((item) => {
                             return (
                                 <p className="book-user" key={item.id} onClick={() => {
@@ -104,6 +133,7 @@ const Book = () => {
                         value={commentData}
                         onChange={(e) => setCommentData(e.target.value)}
                     />
+                    <button className="comment-btn" onClick={postComment}>Отправить</button>
                     {bookData.bookUserCommentModels.map((item) => {
                         return (
                             <div className="comment" key={item.id}>
