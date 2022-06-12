@@ -41,21 +41,14 @@ const Book = () => {
     }, [ratingValue] );
 
     async function postRating() {
-        let url = `http://localhost:8080/book/${bookId}/addRating`;
-        axios.post(url, {
-            userId: userId,
-            grade: ratingValue
-        })
-        setRatingValue("")
+        let url = `http://localhost:8080/book/${bookId}/addRating?userId=${userId}&grade=${ratingValue}`;
+        axios.post(url);
 
     }
 
     async function postComment() {
-        let url = `http://localhost:8080/book/${bookId}/addComment`;
-        axios.post(url, {
-            userId: userId,
-            comment: commentData
-        })
+        let url = `http://localhost:8080/book/${bookId}/addComment?userId=${userId}&comment=${commentData}`;
+        axios.post(url);
     }
 
     return (
